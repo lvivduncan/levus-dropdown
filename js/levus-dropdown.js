@@ -1,3 +1,4 @@
+// 25-07-2020
 function levusDropdown() {
     // усі вкладені УЛи в НОН
     document.querySelectorAll('.levus-dropdown ul').forEach(element => element.style.display = 'none');
@@ -16,4 +17,5 @@ function levusDropdown() {
     }));
 }
 
+// init
 levusDropdown();
