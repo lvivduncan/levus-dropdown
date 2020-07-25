@@ -1,0 +1,7 @@
+.levus-dropdown {
+    position: relative;
+}
+
+.levus-dropdown ul {
+    position: absolute;
+}
