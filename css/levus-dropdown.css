@@ -9,21 +9,23 @@
 #example {
     margin: 100px;
     width: 300px;
-    background: yellowgreen;
     display: flex;
+    justify-content: space-between;
+}
+
+#example .levus-dropdown {
+    background: coral;
+    flex-basis: 45%;
+}
+
+#example .levus-dropdown span {
+    display: inline-block;
+    padding: 5px;
 }
 
 #example ul {
-    background: coral;
-}
-
-.levus-dropdown {
-    flex-basis: 49%;
-}
-
-.levus-dropdown span {
-    display: inline-block;
-    padding: 5px;
+    background: yellowgreen;
+    padding: 10px;
 }
 
 
@@ -31,21 +33,43 @@
 
 .levus-dropdown {
     position: relative;
+    cursor: pointer;
 }
 
 .levus-dropdown ul {
     position: absolute;
     margin: 0;
+    display: block;
+    min-width: 140px;
+    /**/
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    /**/
+    -webkit-transform: rotateX(90deg);
+    transform: rotateX(90deg);
+    /**/
+    -webkit-transition: transform .5s;
+    transition: transform .5s;
+}
+
+.levus-dropdown ul.open {
+    -webkit-transform: rotateX(0);
+    transform: rotateX(0);
+}
+
+.levus-dropdown li {
+    list-style: none;
 }
 
 .levus-dropdown.left ul {
-    left: 0;
+    left: -3em;
 }
 
 .levus-dropdown.right ul {
-    right: 0;
+    right: -3em;
 }
 
 .levus-dropdown span {
     pointer-events: none;
+    cursor: pointer;
 }

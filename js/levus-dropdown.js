@@ -1,20 +1,17 @@
 // 25-07-2020
 function levusDropdown() {
-    // усі вкладені УЛи в НОН
-    document.querySelectorAll('.levus-dropdown ul').forEach(element => element.style.display = 'none');
 
     // УЛ при наведенні стає блок
-    document.querySelectorAll('.levus-dropdown').forEach(element => element.addEventListener('mouseover', function() {
+    document.querySelectorAll('.levus-dropdown').forEach(element => element.addEventListener('mousedown', function() {
         setTimeout(() => {
-            this.querySelector('ul').style.display = 'block';
+            // add better toggle because click on html close elements
+            this.querySelector('ul').classList.add('open');
         }, 300);
     }));
 
-    document.querySelectorAll('.levus-dropdown').forEach(element => element.addEventListener('mouseout', function() {
-        setTimeout(() => {
-            this.querySelector('ul').style.display = 'none';
-        }, 1200);
-    }));
+    document.querySelector('html').addEventListener('click', () => {
+        document.querySelectorAll('.levus-dropdown ul').forEach(element => element.classList.remove('open'));
+    });
 }
 
 // init
