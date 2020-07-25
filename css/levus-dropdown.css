@@ -1,7 +1,51 @@
+/* example start*/
+
+*,
+ ::after,
+ ::before {
+    box-sizing: border-box;
+}
+
+#example {
+    margin: 100px;
+    width: 300px;
+    background: yellowgreen;
+    display: flex;
+}
+
+#example ul {
+    background: coral;
+}
+
+.levus-dropdown {
+    flex-basis: 49%;
+}
+
+.levus-dropdown span {
+    display: inline-block;
+    padding: 5px;
+}
+
+
+/* example end */
+
 .levus-dropdown {
     position: relative;
 }
 
 .levus-dropdown ul {
     position: absolute;
+    margin: 0;
+}
+
+.levus-dropdown.left ul {
+    left: 0;
+}
+
+.levus-dropdown.right ul {
+    right: 0;
+}
+
+.levus-dropdown span {
+    pointer-events: none;
 }

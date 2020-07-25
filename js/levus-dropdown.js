@@ -12,7 +12,7 @@ function levusDropdown() {
     document.querySelectorAll('.levus-dropdown').forEach(element => element.addEventListener('mouseout', function() {
         setTimeout(() => {
             this.querySelector('ul').style.display = 'none';
-        }, 300);
+        }, 1200);
     }));
 }
 
