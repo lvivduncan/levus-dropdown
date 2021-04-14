@@ -1,18 +1,13 @@
-// 25-07-2020
-function levusDropdown() {
 
-    // УЛ при наведенні стає блок
-    document.querySelectorAll('.levus-dropdown').forEach(element => element.addEventListener('mousedown', function() {
-        setTimeout(() => {
-            // add better toggle because click on html close elements
-            this.querySelector('ul').classList.add('open');
-        }, 300);
-    }));
+$('body').append('<div class="levus-dropdown-wrapper"></div>');
 
-    document.querySelector('html').addEventListener('click', () => {
-        document.querySelectorAll('.levus-dropdown ul').forEach(element => element.classList.remove('open'));
-    });
-}
+$('.levus-dropdown a').on('click', function(e){
+    e.preventDefault();
+    $(this).next('.levus-dropdown-content').toggleClass('open');
+    $('.levus-dropdown-wrapper').toggleClass('open');
+});
 
-// init
-levusDropdown();
+$('.levus-dropdown-wrapper').on('click', function(){
+    $('.levus-dropdown-content').removeClass('open');
+    $(this).removeClass('open');
+});

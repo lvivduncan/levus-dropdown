@@ -1,43 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> levus dropdown</title>
-    <link rel="stylesheet" href="css/levus-dropdown.css">
+    <title>levus dropdown</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        #example{
+            margin: 100px;
+        }
+        #example ul{
+            display: block;
+        }
+        #example li{
+            display: inline-block;
+            padding: 0 10px;
+            color: rgb(80, 80, 214);
+        }
+    </style>
 </head>
-
 <body>
 
     <div id="example">
-        <div class="levus-dropdown left">
-            <span>element</span>
-            <ul>
-                <li>first</li>
-                <li>second</li>
-                <li>third</li>
-            </ul>
-        </div>
-
-        <div class="levus-dropdown right">
-            <span>element</span>
-            <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>3</li>
-                <li>3</li>
-                <li>3</li>
-                <li>3</li>
-                <li>3</li>
-                <li>3</li>
-                <li>10</li>
-            </ul>
-        </div>
+        <ul>
+            <li><a href="">1 home page</a></li>
+            <li><a href="">2 inner page</a></li>
+            <li class="levus-dropdown">
+                <a href="">3 inner page</a>
+                <div class="levus-dropdown-content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, ad assumenda? Sapiente, consectetur voluptate iusto, soluta nihil illo culpa accusamus maiores reiciendis fugit suscipit illum molestiae ab obcaecati rem fuga?</p>
+                </div>
+            </li>
+            <li><a href="">4 inner page</a></li>
+            <li><a href="">5 inner page</a></li>
+        </ul>
     </div>
-
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/levus-dropdown.js"></script>
 </body>
-
 </html>
