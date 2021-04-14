@@ -1,75 +1,52 @@
-/* example start*/
-
 *,
- ::after,
- ::before {
+::after,
+::before{
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
 
-#example {
-    margin: 100px;
-    width: 300px;
-    display: flex;
-    justify-content: space-between;
-}
-
-#example .levus-dropdown {
-    background: coral;
-    flex-basis: 45%;
-}
-
-#example .levus-dropdown span {
-    display: inline-block;
-    padding: 5px;
-}
-
-#example ul {
-    background: yellowgreen;
-    padding: 10px;
-}
-
-
-/* example end */
-
-.levus-dropdown {
+/* основна обгортка */
+.levus-dropdown{
     position: relative;
-    cursor: pointer;
 }
 
-.levus-dropdown ul {
+.levus-dropdown a{
+    color: rgb(29, 72, 165);
+    text-decoration: none;
+}
+
+/* схований блок */
+.levus-dropdown-content{
     position: absolute;
-    margin: 0;
-    display: block;
-    min-width: 140px;
-    /**/
-    -webkit-transform-origin: 0 0;
+    left: -80px;
+    z-index: 2;
+    width: 260px;
+    padding: 10px;
+    border: 1px solid #dfdfdf;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 0 rgb(0 0 0 / 20%);
+    margin: 15px 0 0;
+
     transform-origin: 0 0;
-    /**/
-    -webkit-transform: rotateX(90deg);
     transform: rotateX(90deg);
-    /**/
-    -webkit-transition: transform .5s;
-    transition: transform .5s;
+    transition: .5s;
 }
 
-.levus-dropdown ul.open {
-    -webkit-transform: rotateX(0);
+.levus-dropdown .levus-dropdown-content.open{    
     transform: rotateX(0);
 }
 
-.levus-dropdown li {
-    list-style: none;
+.levus-dropdown-wrapper{
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: none;
 }
 
-.levus-dropdown.left ul {
-    left: -3em;
-}
-
-.levus-dropdown.right ul {
-    right: -3em;
-}
-
-.levus-dropdown span {
-    pointer-events: none;
-    cursor: pointer;
+.levus-dropdown-wrapper.open{
+    display: block;
 }
